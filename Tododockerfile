@@ -3,8 +3,9 @@ ADD . /app
 WORKDIR /app
 RUN npm install && \
     npm run build
+    
 FROM nginx:alpine3.23-perl AS runtime
 LABEL PROJECT="React Todo App"
 LABEL author="Lokesh"
-COPY --from=build /app/build /usr/local
+COPY --from=build /app/build /usr/share/nginx/html
 EXPOSE 80
