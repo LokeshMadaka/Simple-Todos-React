@@ -1,4 +1,4 @@
-FROM node:current-alpine AS build
+FROM node:18 AS build
 ADD . /app
 WORKDIR /app
 RUN npm install && \ 
