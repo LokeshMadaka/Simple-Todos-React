@@ -1,4 +1,4 @@
-FROM node:20-trixie AS build
+FROM node:alpine3.23 AS build
 ADD . /app
 WORKDIR /app
 RUN npm install && \ 
